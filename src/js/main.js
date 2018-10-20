@@ -6,7 +6,7 @@
  * *********************************************************************************/
 "use strict";
 
-var URL = "http://localhost/projekt_restapi/weather.php/posts/";
+var URL = "http://localhost/projekt_restapi/src/weather.php/posts/";
 
 //
 // DOM onload

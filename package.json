@@ -1,0 +1,16 @@
+{
+  "name": "projekt_restapi",
+  "version": "1.0.0",
+  "description": "Projekt DT173G",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tiia-Mai Truup",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1"
+  }
+}

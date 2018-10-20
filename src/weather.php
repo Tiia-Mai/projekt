@@ -43,7 +43,7 @@ switch ($method){
 	//case "PUT":
 	//	$sql = "UPDATE posts SET city = '" . $input['city'] . "', temp = '" . $input['temp'] . "', info = '" . $input['info'] . "' WHERE ID = " . $request[1] . ";";
     //	break;
-	//case "POST":
+	case "POST":
 		$sql = "INSERT INTO posts (city, temp, info) VALUES('".$input['city'] ."','".$input['temp']."','".$input['info']."');";
 		break;
 
