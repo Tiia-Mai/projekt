@@ -31,7 +31,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $conn = mysqli_connect("localhost","root","","weatherrest") or die("Error connecting to database.");
 
-$db_connected = mysqli_select_db($conn, "weatherrest"); // Work with the database named 'testrest' 
+$db_connected = mysqli_select_db($conn, "weatherrest"); // Work with the database named 'weatherrest' 
 
 
 //
