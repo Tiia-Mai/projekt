@@ -56,6 +56,7 @@ gulp.task("concminjs",function(){
 
 /* Control changes in files */
 gulp.task("watcher",function(){
+
   watch ("src/js/*.js",function(){
   gulp.start("concminjs");
   });
@@ -63,6 +64,10 @@ gulp.task("watcher",function(){
   watch("src/*.html",function(){
   gulp.start("copyhtml");
   });
+
+  watch("src/*.php",function(){
+    gulp.start("copyphp");
+    });
 
   watch("src/css/*.css",function(){
   gulp.start("concmincss");
