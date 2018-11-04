@@ -10,9 +10,9 @@
 // DELETE          Deletes a resource.
 //
 // Database name: weatherrest, Username: root, Password: '', Table: posts 
-// --------------------------------------------------------------------------------------------
-// | ID (int, AI, PRIMARY KEY) | city (varchar(50)) | temp (varchar(50)) | info (varchar(50)) |
-// --------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------
+// | ID (int, AI, PRIMARY KEY) | city (varchar(50)) | temp (varchar(50)) | info (varchar(50)) postdate (timestamp)|
+// ----------------------------------------------------------------------------------------------------------------
 
 //
 // Get HTTP method, path and input of the request
@@ -33,11 +33,12 @@ $conn = mysqli_connect("localhost","root","","weatherrest") or die("Error connec
 
 $db_connected = mysqli_select_db($conn, "weatherrest"); // Work with the database named 'testrest' 
 
+
 //
 // HTTP method implementations of GET, POST, PUT and DELETE
 switch ($method){
 	case "GET":
-		$sql = "SELECT ID, temp, info, city FROM posts";
+		$sql = "SELECT ID, temp, info, city, postdate FROM posts ORDER BY postdate desc";
 		if(isset($request[1])) $sql = $sql . " WHERE ID = " . $request[1] . ";";
 		break;
 	//case "PUT":
@@ -57,17 +58,16 @@ switch ($method){
 	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
 	$harr = [];
-	if($method != "GET") $sql = "SELECT ID, temp, info, city FROM posts";
+	if($method != "GET") $sql = "SELECT ID, temp, info, city, postdate FROM posts ORDER BY postdate desc";
 	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
     while($row = mysqli_fetch_assoc($result)){
 			$row_arr['ID'] = $row['ID'];
 			$row_arr['city'] = $row['city'];
 			$row_arr['temp'] = $row['temp'];
 			$row_arr['info'] = $row['info'];
+			$row_arr['postdate'] = $row['postdate'];
 			array_push($harr,$row_arr);
 	}
 	mysqli_close($conn);
 	
 	echo json_encode($harr);
-
-	// "SELECT posts.ID, posts.temp, city.name FROM posts INNER JOIN city ON posts.city_ID=city.ID";

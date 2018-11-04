@@ -2,12 +2,14 @@
 
 const gulp = require("gulp");
 const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
+//const uglify = require("gulp-uglify");
+const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require("gulp-clean-css");
 const watch = require("gulp-watch");
 const sass = require('gulp-sass');
 
 var sourcemaps = require('gulp-sourcemaps');
+var gutil = require('gulp-util');
 
 /* SASS*/
 gulp.task('sass', function () {
@@ -23,6 +25,12 @@ gulp.task("copyhtml",function(){
   return gulp.src("src/*.html")
   .pipe(gulp.dest("pub/"));
 });
+
+/* Move PHP-files*/
+gulp.task("copyphp",function(){
+    return gulp.src("src/*.php")
+    .pipe(gulp.dest("pub/"));
+  });
 
 /* Move Pictures */
 gulp.task("copyimages",function(){
@@ -41,7 +49,7 @@ gulp.task('concmincss', function() {
 /* Concat and minify Javascript */
 gulp.task("concminjs",function(){
   return gulp.src("src/js/*.js")
-  .pipe(concat("all.js"))
+  .pipe(concat("main.js"))
   .pipe(uglify())
   .pipe(gulp.dest("pub/js"));
 });
@@ -70,4 +78,4 @@ gulp.task("watcher",function(){
 });
 
 /* Default */
-gulp.task("default",["copyhtml","concminjs","copyimages","concmincss","sass","watcher"]);
+gulp.task("default",["copyhtml","concminjs","copyimages","concmincss","sass","watcher", "copyphp"]);

@@ -8,9 +8,18 @@
   },
   "author": "Tiia-Mai Truup",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-util": "^3.0.8"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1"
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.9.4"
   }
 }

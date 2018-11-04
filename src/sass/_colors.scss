@@ -1,0 +1,9 @@
+$base-color:#000;
+$base-color2:rgb(236, 6, 6);
+
+$background-color:lighten($base-color,98);
+$background-color2:lighten($base-color,15);
+$background-color3:lighten($base-color2,10);
+$font-color:lighten($base-color,10);
+$font-color2:lighten($base-color,90);
+$border-color:lighten($base-color,5);

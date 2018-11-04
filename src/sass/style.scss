@@ -1,0 +1,159 @@
+
+/* import css reset*/
+@import 'cssreset';
+
+/* import colors*/
+@import 'colors';
+
+/* import fontSize*/
+@import 'fonts';
+
+
+
+body,html{
+    background: $background-color;   
+    height: 100%; 
+}
+#container{
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#map{
+    height: 100%;
+}
+
+#titel{
+    h3{
+        font-family: $text-font;
+        font-size: 1.2em;
+    }
+   a{
+    font-family: $header-font;
+    font-size:3em;  
+    text-decoration: none;
+    color: $font-color; 
+   }
+   padding-top: 15px;
+   height: 100px;
+    color: $font-color;      
+    text-shadow: 0 -1px 0 darken($base-color, 10%); 
+    border-bottom: 1px solid $border-color;   
+}
+#weatherlist{    
+    color: $font-color;
+    position: absolute;
+    width: 100%;
+    bottom: 220px;
+    top: 120px;
+    overflow-y: auto;    
+    
+    article{
+        width: 280px;        
+        margin: auto;        
+        padding-top:1em;
+        padding-bottom:1em; 
+        button{
+            font-weight: bold;
+            font-size: 1em;
+            color: $font-color;
+            background: $background-color;
+            width: 100px;
+            border: 2px solid $background-color2;
+            border-radius: 4px;
+        }
+        button:hover{
+            background: $font-color2;
+            cursor: pointer;
+        }               
+        p{
+            font-family: $text-font;
+            font-size: 1.2em;
+            line-height: normal;
+            text-shadow: 0 -1px 0 darken($base-color, 10%);
+        }
+    }
+}
+#titel,#form,#weatherlist
+{
+    text-align: center;
+}
+#form,#footer{       
+    border-top:1px solid $border-color;
+    background: $background-color2;
+    color: $font-color2; 
+    height: 200px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    #instr{
+        padding-top: 30px;
+        text-align: center;
+    }
+    #copyright{
+        text-align: center;
+        font-family: $text-font;
+        font-size: 1m;
+        padding-top: 30px;
+    }
+    input,select{
+        width: 280px;
+        box-sizing: border-box;
+        border: 2px solid $background-color2;
+        border-radius: 4px;
+        font-size: 16px;
+        background: $background-color;
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 5px 10px 5px 10px;
+    }
+   
+    button{
+        padding: 5px 10px 5px 10px; 
+        width: 100px;
+        border: 2px solid $background-color2;
+        border-radius: 4px;
+        font-size: 16px;
+        background: $background-color3;
+        color:$font-color2;
+        font-weight:bold;
+    }
+
+    button:hover{
+        background: $background-color;
+        color: $font-color;
+        cursor: pointer;
+    }
+    h2{
+        font-family: $header-font2;
+        font-size:1.8em;
+        padding: 10px;
+        text-shadow: 0 -1px 0 lighten($base-color, 10%);
+    }
+}
+input,option,select,button{
+    font-family: $text-font;
+}
+
+/* Media Queries */
+@media screen and (min-width: 480px) {
+#form{
+    input,select{
+        width: 500px;
+    }
+}
+#titel{
+    h3{
+        font-size: 1.3em;
+    }
+    a{
+        font-size: 3.5em;
+    }
+}		
+}
+
